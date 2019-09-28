@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Tambah Event</title>
+
+</head>
+
+<body>
+
+	<h1 class="page-header">Tambah Event</h1>
+
+	<form action="/event/tambah/simpan" method="get">
+	<!-- Aa  -->
+		<div>
+			<label for="nama">Nama</label> 
+			<input type="text" name="nama" id="nama" />
+		</div>
+		<div>
+			<label for="kategori">Kategori</label> 
+			<input type="text" name="kategori" id="kategori" />
+		</div>
+		
+		<div>
+			<label for="lokasi">Lokasi</label> 
+			<input type="text" name="lokasi"  id="lokasi"/>
+		</div>
+		
+		<div>
+			<label for="deskripsi">Deskripsi</label> 
+			<textarea name="deskripsi" id="deskripsi"></textarea>
+		</div>
+
+		<div>
+			<button type="submit" name="action" value="save">Simpan</button>
+			<a></a>
+		</div>
+	</form>
+
+</body>
+
+</html>

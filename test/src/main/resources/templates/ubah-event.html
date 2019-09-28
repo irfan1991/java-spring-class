@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Tambah Event</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<h1 class="page-header">Ubah Event</h1>
+
+	<form th:action="@{/event/ubah/simpan}" method="post">
+		<input type="hidden" name="id" th:field="*{event.id}" />
+		<div>
+			<label for="nama">Nama</label> 
+			<input type="text" name="nama" th:field="*{event.nama}" id="nama"/>
+		</div>
+		<div>
+			<label for="kategori">Kategori</label> 
+			<input type="text" name="kategori" th:field="*{event.kategori}"
+			id="kategori"/>
+		</div>
+		<div>
+			<label for="lokasi">Lokasi</label> 
+			<input type="text" name="lokasi" th:field="*{event.lokasi}"
+			id="lokasi"/>
+		</div>
+		<div>
+			<label for="deskripsi">Deskripsi</label> 
+			<textarea name="deskripsi" th:field="*{event.deskripsi}"
+			id="deskripsi"
+			></textarea>
+		</div>
+
+		<div>
+			<button type="submit" name="action" value="save">Simpan</button>
+		</div>
+	</form>
+
+</body>
+
+</html>
