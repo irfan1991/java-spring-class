@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD Part Number</title>
+
+    <!-- Bootstrap CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/datatables.min.css}" rel="stylesheet">
+
+
+    <!-- jQuery -->
+    <script th:src="@{/js/jquery-3.4.1.js}"></script>
+    <!-- Bootstrap JavaScript -->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/datatables.min.js}"></script>
+</head>
+
+<body>
+
+    <!-- -->
+
+    <h1 class="text-center">Table Part Number </h1>
+
+    <div class="container">
+        <!-- <div class="row"> -->
+        <table class="table table-light table-striped" id="myTable">
+            <thead>
+                <tr class="table-danger">
+                    <th>No</th>
+                    <th>Part Number</th>
+                    <th>Nama Barang</th>
+                      <th>Stock</th>
+                    <th>Satuan</th>
+                     <th>Tanggal Dibuat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each = "p : ${parts}">
+                    <td th:text="${no}+1"></td>
+                    <td th:text="${p.part_number}"></td>
+                    <td th:text="${p.part_name}"></td>
+                    <td th:text="${p.part_stock}"></td>
+                    <td th:text="${p.part_uom}"></td>
+                    <td th:text="${p.part_date}"></td>
+                </tr>
+             
+            </tbody>
+        </table>
+        <!-- </div> -->
+    </div>
+
+
+
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>
+</body>
+
+</html>
